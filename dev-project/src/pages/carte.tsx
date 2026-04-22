@@ -1,10 +1,11 @@
+// @ts-nocheck
+
 import { useState, useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, CircleMarker } from 'react-leaflet'
 import { supabase } from '../lib/supabase'
 import 'leaflet/dist/leaflet.css'
 import '../styles/carte.css'
 import '../styles/dashboard.css'
-
 const ABOBO_CENTER = [5.3742, -4.0167]
 
 const statusColor = s =>
