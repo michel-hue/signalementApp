@@ -17,7 +17,7 @@ export default function Sidebar({ onLogout, agentNom }) {
             <div className="sidebar-logo">
                 <div className="sidebar-logo-icon">K</div>
                 <div>
-                    <h2>KonePropre</h2>
+                    <h2>RuePropre</h2>
                     <span>Administration</span>
                 </div>
             </div>

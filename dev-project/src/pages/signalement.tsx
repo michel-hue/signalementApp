@@ -171,32 +171,60 @@ export default function Signalements() {
                 <div className="modal-overlay" onClick={() => setSelected(null)}>
                     <div className="modal" onClick={e => e.stopPropagation()}>
                         <h3>📋 Détail du signalement</h3>
+
                         <div className="modal-field">
                             <label>Référence</label>
                             <p style={{ fontFamily: 'monospace', fontSize: 16, fontWeight: 700 }}>
                                 {selected.token_suivi}
                             </p>
                         </div>
+
                         <div className="modal-field">
                             <label>Type de problème</label>
                             <p>{selected.types_problemes?.libelle}</p>
                         </div>
+
                         <div className="modal-field">
                             <label>Description</label>
                             <p>{selected.description || 'Aucune description'}</p>
                         </div>
+
+                        {/* ← AJOUT PHOTO ICI */}
+                        {selected.photo_url && (
+                            <div className="modal-field">
+                                <label>Photo</label>
+                                <img
+                                    src={selected.photo_url}
+                                    alt="Photo du signalement"
+                                    style={{
+                                        width: '100%',
+                                        height: 200,
+                                        objectFit: 'cover',
+                                        borderRadius: 12,
+                                        marginTop: 8,
+                                        border: '1px solid #E2E8F0'
+                                    }}
+                                    onError={e => {
+                                        e.target.style.display = 'none'
+                                    }}
+                                />
+                            </div>
+                        )}
+
                         <div className="modal-field">
                             <label>Coordonnées GPS</label>
                             <p style={{ fontFamily: 'monospace' }}>
                                 {selected.latitude?.toFixed(6)}, {selected.longitude?.toFixed(6)}
                             </p>
                         </div>
+
                         <div className="modal-field">
                             <label>Statut actuel</label>
                             <span className={`badge ${badgeClass(selected.statut)}`}>
-                {badgeLabel(selected.statut)}
-              </span>
+                    {badgeLabel(selected.statut)}
+                </span>
                         </div>
+
                         <div className="modal-actions">
                             <button className="btn btn-secondary" onClick={() => setSelected(null)}>
                                 Fermer

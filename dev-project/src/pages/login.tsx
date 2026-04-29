@@ -46,7 +46,7 @@ export default function Login({ onLogin }) {
                 <div className="login-logo">
                     <div className="login-logo-icon">K</div>
                     <div>
-                        <h1>KonePropre</h1>
+                        <h1>RuePropre</h1>
                         <span>District Autonome d'Abidjan</span>
                     </div>
                 </div>
