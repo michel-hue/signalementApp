@@ -205,7 +205,8 @@ export default function Signalements() {
                                         border: '1px solid #E2E8F0'
                                     }}
                                     onError={e => {
-                                        e.target.style.display = 'none'
+                                        const img = e.target as HTMLImageElement
+                                        img.style.display = 'none'
                                     }}
                                 />
                             </div>
